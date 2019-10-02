@@ -1,0 +1,33 @@
+{
+    "activationEvents": [
+        "onCommand:extension.sayHello"
+    ],
+    "main": "./src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        // keybingdings
+        "keybindings": [
+            {
+                "command": "extension.sayHello",
+                "key": "ctrl+f10",
+                "mac": "cmd+f10",
+                "when": "editorTextFocus"
+            }
+        ],
+        // 设置菜单
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorFocus",
+                    "command": "extension.sayHello",
+                    "group": "navigation"
+                }
+            ]
+        }
+    }
+}
